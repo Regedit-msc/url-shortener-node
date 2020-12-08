@@ -32,7 +32,7 @@ app.post("/short", async (req, res) => {
   res.redirect("/");
 });
 
-app.get("/:shortid", async (req, res) => {
+app.get("/:shortened_urlid", async (req, res) => {
   // grab the :shortid param
   const shortid = req.params.shortid;
 
