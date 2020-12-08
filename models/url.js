@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const shortId = require("shortid");
 
 const shortUrlSchema = new mongoose.Schema({
-  full: {
+  full_url: {
     type: String,
     required: true,
   },
@@ -10,7 +10,7 @@ const shortUrlSchema = new mongoose.Schema({
     type: String,
     required: true,
 
-    // Use shortid package to generate random short ids
+    // Use shortid package to generate random short
     default: shortId.generate,
   },
   clicks: {
