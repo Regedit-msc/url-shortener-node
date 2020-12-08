@@ -8,7 +8,7 @@ const ShortURL = require("./models/url");
 
 app.set("view engine", "ejs");
 
-const port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: false }));
 
@@ -52,7 +52,7 @@ app.get("/:shortid", async (req, res) => {
 
 // Setup your mongodb connection here
 mongoose
-  .connect(process.env.MONGO_URI, {
+  .connect(`${process.env.MONGO_URI}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
