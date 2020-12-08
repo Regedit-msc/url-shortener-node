@@ -19,23 +19,26 @@
         <h1>URL Shortener </h1>
         <form action="/shortened_url" method="POST" class="my-4 form-inline">
             <label for="fullUrl" class="sr-only">URL</label>
-            <input required placeholder="URL" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
-            <button class="btn btn-primary" type="submit">Shrorten This!</button>
+            <input required placeholder="URL you want to shorten" type="url" name="fullUrl" id="fullUrl"
+                class="form-control col mr-2" />
+            <button class="btn btn-primary" type="submit">Shorten This!</button>
         </form>
 
         <table class="table table-striped table-responsive">
             <thead>
                 <tr>
                     <th>Full URL</th>
-                    <th>Short URL</th>
-                    <th>Clicks</th>
+                    <th>Shortened URL</th>
+                    <th>No of Clicks</th>
                 </tr>
             </thead>
             <tbody>
                 <% shortUrls.forEach(shortUrl => { %>
                 <tr>
                     <td><a href="<%= shortUrl.full_url %>"><%= shortUrl.full_url %></a></td>
-                    <td><a href="<%= shortUrl.shortened_url %>"><%= shortUrl.shortened_url %></a></td>
+                    <td><a
+                            href="<%= shortUrl.shortened_url %>">https://urlshortener-regedit.herokuapp.com/<%= shortUrl.shortened_url %></a>
+                    </td>
                     <td><%= shortUrl.clicks %></td>
                 </tr>
                 <% }) %>
