@@ -47,7 +47,7 @@ app.get("/:shortid", async (req, res) => {
   await rec.save();
 
   // redirect the user to original link
-  res.redirect(rec.full);
+  res.redirect(rec.full_url);
 });
 
 // Setup your mongodb connection here
