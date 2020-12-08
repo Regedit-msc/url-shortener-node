@@ -17,14 +17,14 @@ app.get("/", async (req, res) => {
   res.render("index", { shortUrls: allData });
 });
 
-app.post("/short", async (req, res) => {
+app.post("/shortened_url", async (req, res) => {
   // Grab the fullUrl parameter from the req.body
   const fullUrl = req.body.fullUrl;
   console.log("URL requested: ", fullUrl);
 
   // insert and wait for the record to be inserted using the model
   const record = new ShortURL({
-    full: fullUrl,
+    full_url: fullUrl,
   });
 
   await record.save();
