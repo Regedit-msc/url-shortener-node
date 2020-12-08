@@ -65,10 +65,7 @@ mongoose
 
 mongoose.connection.on("open", async () => {
   // Wait for mongodb connection before server starts
-
-  // Just 2 URLs for testing purpose
-  await ShortURL.create({ full: "http://google.com", short: "5xr" });
-  await ShortURL.create({ full: "https://netlify.com", short: "4tf" });
+  await ShortURL.create({ full: "https://netlify.com", shortened_url: "4tf" });
 
   app.listen(port, () => {
     console.log("Server started");
