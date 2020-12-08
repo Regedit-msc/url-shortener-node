@@ -34,10 +34,10 @@ app.post("/shortened_url", async (req, res) => {
 
 app.get("/:shortened_urlid", async (req, res) => {
   // grab the :shortid param
-  const shortid = req.params.shortid;
+  const shortid = req.params.shortened_urlid;
 
   // perform the mongoose call to find the long URL
-  const rec = await ShortURL.findOne({ short: shortid });
+  const rec = await ShortURL.findOne({ shortened_url: shortid });
 
   // if null, set status to 404 (res.sendStatus(404))
   if (!rec) return res.sendStatus(404);
